@@ -1,5 +1,5 @@
 # CS 340 Introduction to Databases
-This repository is an archive of all the programming assignments for CS 340 at Oregon State University taken winter quarter 2020, taught by Justin Goins.
+This repository is an archive of all the programming assignments for CS 340 at Oregon State University taken summer quarter 2020, taught by Danielle Safonte.
 
 ## Course Description
 In this class I had the had the opportunity to learn the basic skills needed to design and implement a simple to moderately complex database, make good decisions regarding database design, and document your design and queries in standardized notation. Additionally, I had the opportunity to practice these skills by building a simple website driven by a database backend. By the end of the course, I was able to:
