@@ -1,0 +1,80 @@
+{% extends "main.html" %}
+
+{% block references %}
+        <link rel="stylesheet" href="../static/stylesheet.css">
+        <link rel="stylesheet" href="../static/bootstrap.min.css">
+{% endblock %}
+
+
+<header>
+  <div class="header-img-container">
+    <img src="{{url_for('static', filename='shoe.png')}}" alt="Sam's Shop Logo">
+  </div>
+  <h1>Sam's Shoe Store</h1>
+</header>
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="index.html">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="cashiers.html">Cashiers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="customers.html">Customers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sales.html">Sales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="shoes.html">Shoes</a></li>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+    <div class="page-content">
+        <h4>In short, we are designing an interface for the store owner that will give a visual/statistical representation of the store's productivity, so that efficiency and sales can be increased.</h4>
+        <h3>Outline</h3>
+        <ul>
+            <div class="cashiers">
+                <li><a href="cashiers">Cashiers</a></li>
+                <ul>
+                    <li>Add a Cashier</li>
+                    <p>INSERT new cashier with cashierID(PK), firstName, lastName, phoneNumber, email, birthDate, salary, and experience</p>
+                </ul>
+            </div>
+
+            <div class="customer">
+                <li><a href="customers">Customers</a></li>
+                <ul>
+                    <li>Add a Customer through the Sales page</li>
+                    <p>View existing customers and their recent purchases</p>
+                </ul>
+            </div>
+
+            <div class="shoes">
+                <li><a href="shoes">Shoes</a></li>
+                <ul>
+                    <li>Add a Shoe</li>
+                    <p>INSERT new shoe with shoeID(PK), brand, size, gender, and fit</p>
+                </ul>
+            </div>
+
+            <div class="sales">
+                <li><a href="sales">Sales</a></li>
+                <ul>
+                    <li>Add a Sale</li>
+                    <p>INSERT new sale with receiptNumber(PK), puchaseTime, cashierID(FK), customerID(FK), shoesBought(FKs), and amount</p>
+                </ul>
+            </div>
+        </ul>
+    </div>
+{% endblock %}

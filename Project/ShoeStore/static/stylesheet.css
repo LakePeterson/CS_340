@@ -1,0 +1,77 @@
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    color: #03e8fc;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.page-content {
+  display: flex;
+}
+
+.info {
+  display: inline-block;
+  width: 25%;
+  margin: 10px 10px 10px 10px;
+}
+
+.card-header {
+  text-align: center;
+}
+
+/* Cashier Page */
+
+.cashier-table-data-header {
+  display: inline-block;
+  flex: wrap;
+  max-height: 40px;
+  width: 100%;
+  margin: 10px 10px 10px 10px;
+}
+
+/* Customer Page */
+
+.customer-table-data-header {
+  display: inline-block;
+  max-height: 40px;
+  width: 100%;
+  margin: 10px 10px 10px 10px;
+}
+
+/* Sales Page */
+
+.sale-table-data-header {
+  display: inline-block;
+  max-height: 40px;
+  width: 100%;
+  margin: 10px 10px 10px 10px;
+}
+
+/* Shoes Page */
+
+.search-bar {
+  display: inline-block;
+  margin: 5px;
+}
+
+.shoe-table-data-header {
+  display: inline-block;
+  max-height: 40px;
+  width: 100%;
+  margin: 10px 10px 10px 10px;
+}
+
+/* .table-data {
+  display: block;
+  max-height: 40px;
+  margin-top: 10px;
+  margin: 10px 10px 10px 10px;
+} */

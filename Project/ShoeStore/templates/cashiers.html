@@ -1,0 +1,89 @@
+{% extends "main.html" %}
+
+<header>
+  <div class="header-img-container">
+    <img src="../static/shoe.png" alt="Local Shoe Shop Logo">
+  </div>
+  <h1>Cashiers</h1>
+</header>
+
+{% block nav %} {% endblock %}
+
+{% block content %}
+<main class="page-content">
+  <aside class="info">
+    <aside class="add-info">
+      <div class="card bg-light mb-3" style="max-width: 20rem;">
+      <div class="card-header"><h2>Add Cashier</h2></div>
+      <div class="card-body">
+      <form id="cashiersForm" action="/cashiers" method="POST">
+        <div class="form-group">
+          <label class="col-form-label" for="cashierID">Cashier ID</label>
+          <input type="number" id="cashierID" name="cashierID" class="form-control" min="0" step="1" placeholder="Cashier ID" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" class="form-control" maxlength="255" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" class="form-control" maxlength="255" placeholder="Last Name" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="phoneNumber">Phone Number</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="Phone Number" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="email">Email</label>
+          <input type="text" id="email" name="email" class="form-control" maxlength="255" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="birthDate">Birth Date</label>
+          <input type="date" id="birthDate" name="birthDate" class="form-control" placeholder="Birth Date" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="salary">Salary</label>
+          <input type="number" id="salary" name="salary" class="form-control" min="0" step="0.01" placeholder="Salary" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="experience">Experience</label>
+          <input type="number" id="experience" name="experience" class="form-control" min="0" step="1" placeholder="Experience">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" form="cashiersForm">Add Cashier</button>
+      </form>
+      </div>
+    </aside>
+  </aside>
+
+  <div class="cashier-table-data-header">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Cashier ID</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email</th>
+          <th scope="col">Birth Date</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Experience</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in rows %}
+          <tr>
+            <th scope="row">{{r[0]}}</th>
+            <td> {{r[1]}} </td>
+            <td> {{r[2]}} </td>
+            <td> {{r[3]}} </td>
+            <td> {{r[4]}} </td>
+            <td> {{r[5]}} </td>
+            <td> {{r[6]}} </td>
+            <td> {{r[7]}} </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock %}

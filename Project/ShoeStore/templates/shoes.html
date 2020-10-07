@@ -1,0 +1,93 @@
+{% extends "main.html" %}
+
+<header>
+  <div class="header-img-container">
+    <img src="../shoe.png" alt="Local Shoe Shop Logo">
+  </div>
+  <h1>Shoes</h1>
+</header>
+
+{% block nav %} {% endblock %}
+
+{% block content %}
+
+<main class="page-content">
+  <aside class="info">
+
+    <aside class="search-info">
+		<div class="card bg-light mb-3" style="max-width: 20rem;">
+        <div class="card-header"><h2>Search Shoes by Popularity</h2></div>
+        <div class="card-body">
+		  <form id="search" action="/shoes" method="GET">
+		  <div class="form-group">
+			<label for="searchBar">Search Shoes by Popularity</label>
+			<input type="text" id="searchBar" name="searchBar" class="form-control" maxlength="255" placeholder="Low - Medium - High">
+		  </div>
+		  <button type="submit" class="btn btn-primary btn-lg btn-block form="search">Search</button>
+		</form>
+	  </aside>
+
+    <aside class="add-info">
+      <div class="card bg-light mb-3" style="max-width: 20rem;">
+      <div class="card-header"><h2>Add Shoe</h2></div>
+      <div class="card-body">
+      <form id="shoesForm" action="/shoes" method="POST">
+        <div class="form-group">
+          <label class="col-form-label" for="shoeID">Shoe ID</label>
+          <input type="number" id="shoeID" name="shoeID" class="form-control" min="0" step="1" placeholder="Shoe ID" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="shoeBrand">Shoe Brand</label>
+          <input type="text" id="shoeBrand" name="shoeBrand" class="form-control" maxlength="255" placeholder="Shoe Brand" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="shoeGender">Shoe Gender</label>
+          <input type="text" id="shoeGender" name="shoeGender" class="form-control" maxlength="255" placeholder="Shoe Gender" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="shoeType">Shoe Type</label>
+          <input type="text" id="shoeType" name="shoeType" class="form-control" maxlength="255" placeholder="Shoe Type" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="shoePopularity">Shoe Popularity</label>
+          <input type="text" id="shoePopularity" name="shoePopularity" class="form-control" maxlength="255" placeholder="Shoe Popularity" required>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="shoePrice">Shoe Price</label>
+          <input type="number" id="shoePrice" name="shoePrice" class="form-control" min="0" step="0.01" placeholder="Shoe Price" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" form="shoesForm">Add Shoe</button>
+      </form>
+      </div>
+    </aside>
+  </aside>
+
+  <div class="shoe-table-data-header">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Shoe ID</th>
+          <th scope="col">Shoe Brand</th>
+          <th scope="col">Shoe Gender</th>
+          <th scope="col">Shoe Type</th>
+          <th scope="col">Shoe Popularity</th>
+          <th scope="col">Shoe Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in rows %}
+          <tr>
+            <th scope="row"> {{r[0]}} </th>
+            <td> {{r[1]}} </td>
+            <td> {{r[2]}} </td>
+            <td> {{r[3]}} </td>
+            <td> {{r[4]}} </td>
+            <td> {{r[5]}} </td>
+            <td><button type="button" class="btn btn-primary" onclick="window.location = '/deleteShoeAndSale/{{r[0]}}'">Delete</button></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock %}
